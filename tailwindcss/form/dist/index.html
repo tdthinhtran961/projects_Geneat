@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <section class="bg-white h-screen mt-10">
+      <div>
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900"
+          >
+            Contact us
+          </h2>
+          <p
+            class="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl"
+          >
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente,
+            quae eos. Ipsa blanditiis quo voluptate voluptas, harum explicabo
+            dicta minus placeat accusamus, ex qui adipisci libero, ipsum nisi
+            debitis doloremque.
+          </p>
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            id="form"
+            class="space-y-8"
+          >
+            <!-- validation -->
+            <input
+              type="hidden"
+              name="access_key"
+              value="aff4f71d-49ca-4dcb-9540-ca67fa60e092"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="New submission from your website"
+            />
+
+            <div class="">
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Your email</label
+              >
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="name@email.com"
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                required
+              />
+            </div>
+
+            <div class="">
+              <label
+                for="subject"
+                class="block mb-2 text-sm font-medium text-gray-900"
+                >Subject</label
+              >
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                placeholder="Let us know how we can help"
+                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                required
+              />
+            </div>
+
+            <div class="sm:col-span-2">
+              <label
+                for="message"
+                class="block mb-2 text-sm font-medium text-gray-900"
+              >
+                Your message
+              </label>
+              <textarea
+                name="message"
+                id="message"
+                rows="6"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Leave a comment"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="py-3 px-5 text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+            >
+              Send message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

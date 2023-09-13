@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="./output.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="./index.js"></script>
+  </head>
+  <body id="toggleDark" class="">
+    <nav
+      class="2xl:container 2xl:mx-auto md:py-5 lg:px-20 md:px-6 p-4 fixed bg-gray-100 w-screen"
+    >
+      <div class="flex items-center justify-between">
+        <div class="lg:w-3/12">
+          <div
+            class="w-52 hidden lg:flex items-center space-x-3 border-b border-gray-200 pb-2"
+          >
+            <div class="w-5">
+              <ion-icon name="search" class="text-xl"></ion-icon>
+              <img
+                class="w-5 dark:block hidden"
+                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg1dark.svg"
+                alt="Search"
+              />
+            </div>
+            <input
+              type="text"
+              placeholder="Search for products"
+              class="bg-transparent text-sm text-gray-600 focus:outline-none"
+            />
+          </div>
+          <button
+            onclick="openMenu()"
+            aria-label="Open Menu"
+            class="text-gray-800 dark:text-white hidden md:block lg:hidden focus:outline-none focus:ring-2 focus:ring-gray-800 rounded"
+          >
+            <img
+              class="dark:hidden"
+              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg2.svg"
+              alt="toggler"
+            />
+            <img
+              class="dark:block hidden"
+              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg2dark.svg"
+              alt="toggler"
+            />
+          </button>
+          <button
+            onclick="openSearchMenu()"
+            aria-label="Search Menu"
+            class="text-gray-800 dark:text-white md:hidden focus:outline-none focus:ring-2 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5"
+          >
+            <img
+              class="w-5 dark:hidden"
+              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg1.svg"
+              alt="Search"
+            />
+            <img
+              class="w-5 dark:block hidden"
+              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg1dark.svg"
+              alt="Search"
+            />
+          </button>
+        </div>
+        <div
+          class="lg:w-6/12 flex flex-col justify-center items-center space-y-3.5"
+        >
+          <div
+            aria-label="Luxiwood. Logo"
+            role="img"
+            class="cursor-pointer flex"
+          >
+            <ion-icon
+              name="home-outline"
+              class="items-center text-2xl"
+            ></ion-icon>
+            <h1 class="items-center ml-2 font-semibold text-xl">FURNATURE</h1>
+          </div>
+          <div class="hidden lg:block">
+            <ul class="flex items-center space-x-10">
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="dark:text-white dark:hover:text-gray-300 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="dark:text-white dark:hover:text-gray-300 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                  >Catalog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="dark:text-white dark:hover:text-gray-300 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                  >Top Sell</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="dark:text-white dark:hover:text-gray-300 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                  >Specifications</a
+                >
+              </li>
+              <li>
+                <a
+                  href="javascript:void(0)"
+                  class="dark:text-white dark:hover:text-gray-300 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                  >Contact us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:w-3/12 flex justify-end items-center space-x-4">
+          <a
+            href="javascript:void(0)"
+            class="hidden md:block focus:outline-none text-gray-800 focus:ring-2 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5"
+          >
+            <ion-icon
+              name="log-in"
+              class="text-2xl"
+              onclick="modalHandlerLogin()"
+            ></ion-icon>
+          </a>
+          <a
+            href="javascript:void(0)"
+            class="hidden md:block focus:outline-none text-gray-800 focus:ring-2 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5"
+          >
+            <ion-icon
+              name="cart"
+              class="text-2xl"
+              onclick="modalHandlerCart()"
+            ></ion-icon>
+          </a>
+          <button
+            onclick="openSmMenu()"
+            aria-label="open menu"
+            class="text-gray-800 dark:text-white md:hidden focus:outline-none focus:ring-2 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5"
+          >
+            <img
+              class="dark:hidden"
+              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg2.svg"
+              alt="toggler"
+            />
+            <img
+              class="dark:block hidden"
+              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg2dark.svg"
+              alt="toggler"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="md-menu"
+        class="hidden lg:hidden absolute z-10 inset-0 h-screen w-full dark:bg-gray-800 bg-gray-800 bg-opacity-70 dark:bg-opacity-70"
+      >
+        <div class="relative w-full h-screen">
+          <div
+            class="absolute inset-0 w-1/2 bg-white dark:bg-gray-900 p-6 justify-center"
+          >
+            <div
+              class="flex items-center justify-between border-b pb-4 border-gray-200 dark:border-gray-700"
+            >
+              <div class="flex items-center space-x-3 mx-2">
+                <div>
+                  <img
+                    class="w-5 dark:hidden"
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg1.svg"
+                    alt="Search"
+                  />
+                  <img
+                    class="w-5 dark:block hidden"
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg1dark.svg"
+                    alt="Search"
+                  />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search for products"
+                  class="text-sm text-gray-600 dark:text-gray-300 focus:outline-none bg-transparent"
+                />
+              </div>
+              <button
+                onclick="closeMenu()"
+                aria-label="close menu"
+                class="focus:outline-none focus:ring-2 focus:ring-gray-800"
+              >
+                <img
+                  class="dark:hidden"
+                  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg6.svg"
+                  alt="close"
+                />
+                <img
+                  class="dark:block hidden"
+                  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg6dark.svg"
+                  alt="close"
+                />
+              </button>
+            </div>
+            <div class="mt-8">
+              <ul class="flex flex-col space-y-8">
+                <li class="flex items-center justify-between">
+                  <a
+                    href="javascript:void(0)"
+                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                    >Home</a
+                  >
+                </li>
+                <li class="flex items-center justify-between">
+                  <a
+                    href="javascript:void(0)"
+                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                    >Catalog</a
+                  >
+                </li>
+                <li class="flex items-center justify-between">
+                  <a
+                    href="javascript:void(0)"
+                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                    >Top Sell</a
+                  >
+                </li>
+                <li class="flex items-center justify-between">
+                  <a
+                    href="javascript:void(0)"
+                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                    >Blog</a
+                  >
+                </li>
+                <li class="flex items-center justify-between">
+                  <a
+                    href="javascript:void(0)"
+                    class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                    >Contact us</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search menu -->
+      <div
+        id="mobile-search-menu"
+        class="hidden md:hidden absolute inset-0 z-10 flex flex-col w-full h-screen bg-white dark:bg-gray-900 pt-4"
+      >
+        <div class="w-full">
+          <div
+            class="flex items-center justify-between border-b border-gray-200 pb-3 mx-4"
+          >
+            <div class="flex items-center space-x-3 mx-2">
+              <div>
+                <img
+                  class="w-5 dark:hidden"
+                  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg1.svg"
+                  alt="Search"
+                />
+                <img
+                  class="w-5 dark:block hidden"
+                  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg1dark.svg"
+                  alt="Search"
+                />
+              </div>
+              <input
+                type="text"
+                placeholder="Search for products"
+                class="text-sm text-gray-600 focus:outline-none bg-transparent"
+              />
+            </div>
+
+            <button
+              aria-label="close menu"
+              onclick="closeSearchMenu()"
+              class="text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800"
+            >
+              <img
+                class="dark:hidden"
+                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg6.svg"
+                alt="close"
+              />
+              <img
+                class="dark:block hidden"
+                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg6dark.svg"
+                alt="close"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="mt-8 mx-4">
+          <h2 class="text-sm text-gray-600 dark:text-gray-300 uppercase">
+            Suggestions
+          </h2>
+          <ul class="mt-6 flex flex-col space-y-6">
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Bags</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Shoes</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Capes</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Coats</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Denim 2021</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Leather shoe collection 2021</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Active wear</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-sm text-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Sweat suits</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="w-full h-full flex items-end">
+          <ul
+            class="bg-gray-50 dark:bg-gray-800 py-10 px-4 flex flex-col space-y-8 w-full"
+          >
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="flex items-center space-x-2 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+              >
+                <div>
+                  <ion-icon
+                    name="log-in"
+                    class="text-2xl"
+                    onclick="modalHandlerCart()"
+                  ></ion-icon>
+                </div>
+                <p class="text-base">Cart</p>
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="flex items-center space-x-2 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+              >
+                <div>
+                  <ion-icon
+                    name="log-in"
+                    class="text-2xl"
+                    onclick="modalHandlerLogin()"
+                  ></ion-icon>
+                </div>
+                <p class="text-base">Login</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Main Menu -->
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute inset-0 z-10 flex flex-col w-full h-screen bg-white pt-4"
+      >
+        <div class="w-full">
+          <div
+            class="flex items-center justify-between border-b border-gray-200 pb-4 mx-4"
+          >
+            <div></div>
+            <div><p class="text-base font-semibold text-gray-800">Menu</p></div>
+            <button
+              aria-label="close menu"
+              onclick="closeSmMenu()"
+              class="text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800"
+            >
+              <img
+                class="dark:hidden"
+                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg6.svg"
+                alt="close"
+              />
+              <img
+                class="dark:block hidden"
+                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg6dark.svg"
+                alt="close"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="mt-6 mx-4">
+          <ul class="flex flex-col space-y-8">
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-base text-gray-800 focus:outline-none dark:text-white focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Home</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-base text-gray-800 focus:outline-none dark:text-white focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Catalog</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-base text-gray-800 focus:outline-none dark:text-white focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Top Sell</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-base text-gray-800 focus:outline-none dark:text-white focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Blog</a
+              >
+            </li>
+            <li class="flex items-center justify-between">
+              <a
+                href="javascript:void(0)"
+                class="text-base text-gray-800 focus:outline-none dark:text-white focus:ring-2 focus:ring-gray-800 hover:underline"
+                >Contact us</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="w-full h-full flex items-start">
+          <ul
+            class="bg-gray-50 dark:bg-gray-800 py-10 px-4 flex flex-col space-y-8 w-full"
+          >
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="flex items-center space-x-2 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+              >
+                <div onclick="modalHandlerCart()" class="flex gap-1">
+                  <ion-icon name="log-in" class="text-2xl"></ion-icon>
+                  <p class="text-base">Cart</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="flex items-center space-x-2 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
+              >
+                <div class="flex gap-1" onclick="modalHandlerLogin()">
+                  <ion-icon name="log-in" class="text-2xl"></ion-icon>
+                  <p class="text-base">Login</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- start header -->
+    <main
+      class="bg-[url('https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] h-screen bg-cover bg-no-repeat bg-fixed"
+    >
+      <div class="container mx-auto flex flex-col items-center py-12 pt-48">
+        <header class="w-11/12 flex flex-col justify-center items-center mb-5">
+          <h1 class="text-3xl text-center text-gray-800 font-black leading-9">
+            Shop without leaving the
+            <span class="text-blue-700">Comforts</span> of your home
+          </h1>
+          <p class="mt-5 text-gray-900 text-center text-sm font-normal w-10/12">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
+            beatae possimus asperiores
+          </p>
+        </header>
+
+        <div class="flex justify-center items-center">
+          <button
+            class="bg-blue-700 text-xl font-bold rounded text-white px-4 py-2 border-indigo-700 hover:bg-blue-600"
+          >
+            Shop Now
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- start section -->
+    <section class="py-8 px-4 lg:px-20 md:px-6 md:py-12">
+      <div class="lg:flex items-center justify-between">
+        <div class="lg:w-1/3">
+          <h1 class="text-4xl leading-6 mt-4 text-gray-600">Indor Interiors</h1>
+          <p class="text-base leading-6 mt-4 text-gray-600">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
+            in, ex eligendi tempora sunt assumenda adipisci sequi ducimus ad
+            atque omnis maxime quis impedit expedita temporibus, minus
+            perferendis tempore modi.
+          </p>
+          <button
+            type="button"
+            class="mt-6 text-base font-semibold leading-none text-gray-800 flex items-center"
+          >
+            View catalogue
+          </button>
+          <img
+            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature-VI-svg1.svg"
+            alt=""
+            class="ml-2 mt-1"
+          />
+        </div>
+
+        <div class="mt-8">
+          <div class="w-full h-full bg-red-200">
+            <img
+              src="https://i.ibb.co/cbyDY74/pexels-max-vakhtbovych-6782351-1-1.png"
+              alt=""
+            />
+          </div>
+          <div class="grid gap-6 mt-4 grid-cols-2">
+            <img
+              src="https://i.ibb.co/0Jv3FSy/pexels-max-vakhtbovych-6436799-1-1.png"
+              alt=""
+            />
+            <img
+              src="https://i.ibb.co/4Jrp5TB/pexels-max-vakhtbovych-6782370-1.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- best seller ui -->
+    <div class="2xl:container 2xl:mx-auto bg-gray-100">
+      <div class="lg:px-20 md:px-6 px-4 md:py-12 py-8">
+        <div>
+          <h1
+            class="text-3xl lg:text-4xl font-semibold text-gray-800 dark:text-white text-center dark:text-gray-50"
+          >
+            Top Selling
+          </h1>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-8 md:mt-10"
+        >
+          <div class="bg-gray-50 dark:bg-gray-800 p-8">
+            <div class="">
+              <h2 class="text-xl text-gray-600 dark:text-white">
+                Lounge Chair
+              </h2>
+              <p
+                class="text-xl font-semibold text-gray-800 dark:text-white mt-2"
+              >
+                $1200
+              </p>
+            </div>
+            <div class="flex justify-center items-center mt-8 md:mt-24">
+              <img
+                class=""
+                src="https://i.ibb.co/8403ZFZ/pexels-hormel-2762247-removebg-preview-2-1.png"
+                alt="A chair with designed back"
+                role="img"
+              />
+            </div>
+            <div class="flex justify-end items-center space-x-2 mt-16 md:mt-32">
+              <button
+                aria-label="show in red color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-red-600 border rounded-full border-gray-500"
+                ></div>
+              </button>
+              <button
+                aria-label="show in white color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-white border rounded-full border-gray-500"
+                ></div>
+              </button>
+              <button
+                aria-label="show in black color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-gray-900 border rounded-full border-gray-500"
+                ></div>
+              </button>
+            </div>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 p-8">
+            <div class="">
+              <h2 class="text-xl text-gray-600 dark:text-white">
+                Lounge Chair
+              </h2>
+              <p
+                class="text-xl font-semibold text-gray-800 dark:text-white mt-2"
+              >
+                $1200
+              </p>
+            </div>
+            <div class="flex justify-center items-center mt-8 md:mt-24">
+              <img
+                class=""
+                src="https://i.ibb.co/WBdnRqb/eugene-chystiakov-3ne-Swyntb-Q8-unsplash-1-removebg-preview-2-1.png"
+                alt="A chair with wooden legs"
+                role="img"
+              />
+            </div>
+            <div class="flex justify-end items-center space-x-2 mt-8 md:mt-32">
+              <button
+                aria-label="show in white color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-white border rounded-full border-gray-500"
+                ></div>
+              </button>
+              <button
+                aria-label="show in black color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-gray-900 border rounded-full border-gray-500"
+                ></div>
+              </button>
+            </div>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 p-8">
+            <div class="">
+              <h2 class="text-xl text-gray-600 dark:text-white">
+                Lounge Chair
+              </h2>
+              <p
+                class="text-xl font-semibold text-gray-800 dark:text-white mt-2"
+              >
+                $1200
+              </p>
+            </div>
+            <div class="flex justify-center items-center mt-8 md:mt-24">
+              <img
+                class=""
+                src="https://i.ibb.co/R2fbCvj/kari-shea-It-Mgg-D0-Egu-Y-unsplash-removebg-preview-2-1.png"
+                alt="A sofa chair with wooden legs"
+                role="img"
+              />
+            </div>
+            <div class="flex justify-end items-center space-x-2 mt-16 md:mt-32">
+              <button
+                aria-label="show in green color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-green-700 border rounded-full border-gray-500"
+                ></div>
+              </button>
+              <button
+                aria-label="show in brown color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-yellow-800 border rounded-full border-gray-500"
+                ></div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6 lg:gap-8 mt-4 md:mt-6 lg:mt-8"
+        >
+          <div class="bg-gray-50 dark:bg-gray-800 p-8">
+            <div>
+              <h2 class="text-xl leading-tight text-gray-600 dark:text-white">
+                Sectional Sofa
+              </h2>
+              <p
+                class="text-xl font-semibold text-gray-800 dark:text-white mt-2"
+              >
+                $78900
+              </p>
+            </div>
+            <div class="flex justify-center items-center mt-28 md:mt-3">
+              <img
+                src="https://i.ibb.co/CPdBFwZ/pexels-pixabay-276583-removebg-preview-1-1.png"
+                alt="A large sectional sofa"
+                role="img"
+              />
+            </div>
+            <div class="flex justify-end items-center space-x-2 mt-36 md:mt-12">
+              <button
+                aria-label="show in yellow color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-yellow-500 border rounded-full border-gray-500"
+                ></div>
+              </button>
+              <button
+                aria-label="show in light gray color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-gray-400 border rounded-full border-gray-500"
+                ></div>
+              </button>
+            </div>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 p-8">
+            <div>
+              <h2 class="text-xl leading-tight text-gray-600 dark:text-white">
+                Two Seater Sofa
+              </h2>
+              <p
+                class="text-xl font-semibold text-gray-800 dark:text-white mt-2"
+              >
+                $2900
+              </p>
+            </div>
+            <div class="flex justify-center items-center mt-28 md:mt-1">
+              <img
+                src="https://i.ibb.co/238nZzf/pexels-andrea-piacquadio-3757055-removebg-preview-1-1.png"
+                alt="A beautiful two seater sofa"
+                role="img"
+              />
+            </div>
+            <div class="flex justify-end items-center space-x-2 mt-36 md:mt-12">
+              <button
+                aria-label="show in black color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-gray-900 border rounded-full border-gray-500"
+                ></div>
+              </button>
+              <button
+                aria-label="show in green color"
+                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600 rounded"
+              >
+                <div
+                  class="w-2.5 h-2.5 bg-green-700 border rounded-full border-gray-500"
+                ></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product Features -->
+    <div class="bg-white">
+      <div
+        class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8"
+      >
+        <div>
+          <h2
+            class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            Technical Specifications
+          </h2>
+          <p class="mt-4 text-gray-500">
+            The walnut wood card tray is precision milled to perfectly fit a
+            stack of Focus cards. The powder coated steel divider separates
+            active cards from new ones, or can be used to archive important task
+            lists.
+          </p>
+
+          <dl
+            class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8"
+          >
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Origin</dt>
+              <dd class="mt-2 text-sm text-gray-500">
+                Designed by Good Goods, Inc.
+              </dd>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Material</dt>
+              <dd class="mt-2 text-sm text-gray-500">
+                Solid walnut base with rare earth magnets and powder coated
+                steel card cover
+              </dd>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Dimensions</dt>
+              <dd class="mt-2 text-sm text-gray-500">
+                6.25&quot; x 3.55&quot; x 1.15&quot;
+              </dd>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Finish</dt>
+              <dd class="mt-2 text-sm text-gray-500">
+                Hand sanded and finished with natural oil
+              </dd>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Includes</dt>
+              <dd class="mt-2 text-sm text-gray-500">
+                Wood card tray and 3 refill packs
+              </dd>
+            </div>
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Considerations</dt>
+              <dd class="mt-2 text-sm text-gray-500">
+                Made from natural materials. Grain and color vary with each
+                item.
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+          <img
+            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
+            alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
+            class="rounded-lg bg-gray-100"
+          />
+          <img
+            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg"
+            alt="Top down view of walnut card tray with embedded magnets and card groove."
+            class="rounded-lg bg-gray-100"
+          />
+          <img
+            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg"
+            alt="Side of walnut card tray with card groove and recessed card area."
+            class="rounded-lg bg-gray-100"
+          />
+          <img
+            src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg"
+            alt="Walnut card tray filled with cards and card angled in dedicated groove."
+            class="rounded-lg bg-gray-100"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- start footer -->
+    <footer class="bg-gray-200 px-4 py-12">
+      <div class="flex flex-col items-center justify-center">
+        <h1 class="items-center ml-2 font-semibold text-xl">FURNATURE</h1>
+      </div>
+      <div class="flex items-center justify-center flex-wrap mt-8 gap-8">
+        <a
+          href="javascript:void(0)"
+          class="text-base cursor-pointer leading-4 text-gray-800 hover:text-gray-500"
+        >
+          Home
+        </a>
+
+        <a
+          href="javascript:void(0)"
+          class="text-base cursor-pointer leading-4 text-gray-800 hover:text-gray-500"
+        >
+          Catalog
+        </a>
+
+        <a
+          href="javascript:void(0)"
+          class="text-base cursor-pointer leading-4 text-gray-800 hover:text-gray-500"
+        >
+          Top Sell
+        </a>
+
+        <a
+          href="javascript:void(0)"
+          class="text-base cursor-pointer leading-4 text-gray-800 hover:text-gray-500"
+        >
+          Blog
+        </a>
+
+        <a
+          href="javascript:void(0)"
+          class="text-base cursor-pointer leading-4 text-gray-800 hover:text-gray-500"
+        >
+          Contact us
+        </a>
+      </div>
+
+      <div class="flex items-center justify-center gap-x-8 mt-8">
+        <!-- google -->
+        <button
+          class="focus:ring-2 focus:ring-offset-2 focus:outline-none focus:ring-gray-800 rounded-full"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fab"
+            data-icon="google"
+            class="w-3 h-full mx-auto"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 488 512"
+          >
+            <path
+              fill="currentColor"
+              d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- Twitter -->
+        <button
+          class="focus:ring-2 focus:ring-offset-2 focus:outline-none focus:ring-gray-800 rounded-full"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fab"
+            data-icon="twitter"
+            class="w-3 h-full mx-auto"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="currentColor"
+              d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- facebook -->
+        <button
+          class="focus:ring-2 focus:ring-offset-2 focus:outline-none focus:ring-gray-800 rounded-full"
+        >
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fab"
+            data-icon="facebook-f"
+            class="w-2 h-full mx-auto"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 512"
+          >
+            <path
+              fill="currentColor"
+              d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex items-center mt-6 justify-center">
+        <p class="text-base leading-4 text-gray-800">
+          2021 <span class="font-semibold">Furnature</span>
+        </p>
+        <div class="border-l border-gray-800 pl-2 ml-2">
+          <p class="text-base leading-4 text-gray-800">
+            Inc. All rights reserved
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- start login modal -->
+    <div id="modalLogin" class="relative z-[100] hidden">
+      <!-- overlay -->
+      <div
+        class="fixed inset-0 bg-gray-50 bg-opacity-75 transition-opacity"
+      ></div>
+
+      <!-- modal -->
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center">
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white shadow-xl transition-all"
+          >
+            <div class="bg-white px-4 pt-5 pb-4">
+              <!-- close modal login -->
+              <a
+                class="flex justify-end cursor-pointer"
+                href="javascript:void(0)"
+              >
+                <ion-icon
+                  name="close-outline"
+                  onclick="closeModalLogin()"
+                ></ion-icon>
+              </a>
+              <div class="flex flex-col items-center justify-center">
+                <img
+                  src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg1.svg"
+                  alt="logo"
+                />
+                <div class="bg-white shadow rounded w-full">
+                  <p
+                    class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-600"
+                  >
+                    Login to your account
+                  </p>
+                  <p
+                    class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-50"
+                  >
+                    Don't have account?
+                    <a
+                      href="javascript:void(0)"
+                      class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer"
+                      >Sign up here</a
+                    >
+                  </p>
+                  <button
+                    class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10"
+                  >
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg"
+                      alt="google"
+                    />
+                    <p class="text-base font-medium ml-4 text-gray-700">
+                      Continue with Google
+                    </p>
+                  </button>
+
+                  <button
+                    class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10"
+                  >
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg3.svg"
+                      alt="github"
+                    />
+                    <p class="text-base font-medium ml-4 text-gray-700">
+                      Continue with github
+                    </p>
+                  </button>
+
+                  <button
+                    class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10"
+                  >
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg4.svg"
+                      alt="twitter"
+                    />
+                    <p class="text-base font-medium ml-4 text-gray-700">
+                      Continue with Twitter
+                    </p>
+                  </button>
+
+                  <div class="w-full flex items-center justify-between py-5">
+                    <hr class="w-full bg-gray-400" />
+                    <p
+                      class="text-base font-medium leading-4 px-2.5 text-gray-400"
+                    >
+                      Or
+                    </p>
+                    <hr class="w-full bg-gray-400" />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      class="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                    />
+                  </div>
+                  <div class="mt-6 w-full">
+                    <div class="relative flex items-center justify-center">
+                      <input
+                        type="password"
+                        placeholder="password"
+                        id="password"
+                        class="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                      />
+                      <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
+                        <img
+                          src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg"
+                          alt="viewport"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-8">
+                    <button
+                      type="button"
+                      class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 bg-gray-50 px-4 py-3">
+              <button
+                type="button"
+                class="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              >
+                Register
+              </button>
+              <p
+                class="inline-flex justify-start px-4 py-2 text-base font-medium text-gray-500"
+              >
+                Don't have an account yet?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- start cart modal -->
+    <div id="modalCart" class="relative z-[100] hidden">
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      ></div>
+
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="w-full h-full bg-black bg-opacity-90 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0"
+            id="chec-div"
+          >
+            <div
+              class="w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700"
+              id="checkout"
+            >
+              <div
+                class="flex items-end lg:flex-row flex-col justify-end"
+                id="cart"
+              >
+                <div
+                  class="lg:w-1/2 md:w-8/12 w-full lg:px-8 py-4 bg-white dark:bg-gray-800 overflow-y-hidden overflow-x-hidden lg:h-screen h-auto"
+                  id="scroll"
+                >
+                  <div
+                    class="flex items-center text-gray-500 hover:text-gray-600 dark:text-white cursor-pointer"
+                    onclick="checkoutBack()"
+                  >
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/shopping-cart-1-svg1.svg"
+                      alt="previous"
+                      class="dark:hidden"
+                    />
+                    <p
+                      class="text-sm pl-2 leading-none dark:hover:text-gray-200"
+                    >
+                      Back
+                    </p>
+                  </div>
+
+                  <div
+                    class="md:flex items-stretch py-8 md:py-10 lg:py-8 border-t border-gray-50"
+                  >
+                    <div class="md:w-4/12 2xl:w-1/4 w-full">
+                      <img
+                        src="https://i.ibb.co/c6KyDXN/Rectangle-5-1.png"
+                        alt="Gray Sneakers"
+                        class="h-full object-center object-cover md:block hidden"
+                      />
+                      <img
+                        src="https://i.ibb.co/yVSpYqx/Rectangle-6.png"
+                        alt="Gray Sneakers"
+                        class="md:hidden w-full h-full object-center object-cover"
+                      />
+                    </div>
+                    <div
+                      class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center"
+                    >
+                      <p
+                        class="text-xs leading-3 text-gray-800 dark:text-white md:pt-0 pt-4"
+                      >
+                        RF293
+                      </p>
+                      <div
+                        class="flex items-center justify-between w-full pt-1"
+                      >
+                        <p
+                          class="text-base font-black leading-none text-gray-800 dark:text-white"
+                        >
+                          AB sneakers
+                        </p>
+                        <select
+                          name=""
+                          id=""
+                          class="py-2 px-1 border border-gray-200 mr-6 focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                        >
+                          <option value="">01</option>
+                          <option value="">02</option>
+                          <option value="">03</option>
+                        </select>
+                      </div>
+                      <p
+                        class="text-xs leading-3 text-gray-600 dark:text-white pt-2"
+                      >
+                        Height: 10 inches
+                      </p>
+                      <p
+                        class="text-xs leading-3 text-gray-600 dark:text-white py-4"
+                      >
+                        Color: Black
+                      </p>
+                      <p
+                        class="w-96 text-xs leading-3 text-gray-600 dark:text-white"
+                      >
+                        Composition: 100% claf leather
+                      </p>
+                      <div class="flex items-center justify-between pt-5">
+                        <div class="flex items-center">
+                          <p
+                            class="text-xs leading-3 underline text-gray-800 dark:text-white cursor-pointer"
+                          >
+                            Add to favorites
+                          </p>
+                          <p
+                            class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer"
+                          >
+                            Remove
+                          </p>
+                        </div>
+                        <p
+                          class="text-base font-black leading-none text-gray-800 dark:text-white"
+                        >
+                          $5,000
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="md:flex items-stretch py-8 md:py-10 lg:py-8 border-t border-gray-50"
+                  >
+                    <div class="md:w-4/12 2xl:w-1/4 w-full">
+                      <img
+                        src="https://i.ibb.co/6gzWwSq/Rectangle-20-1.png"
+                        alt="Black Leather Purse"
+                        class="h-full object-center object-cover md:block hidden"
+                      />
+                      <img
+                        src="https://i.ibb.co/TTnzMTf/Rectangle-21.png"
+                        alt="Black Leather Purse"
+                        class="md:hidden w-full h-full object-center object-cover"
+                      />
+                    </div>
+                    <div
+                      class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center"
+                    >
+                      <p
+                        class="text-xs leading-3 text-gray-800 dark:text-white md:pt-0 pt-4"
+                      >
+                        RF293
+                      </p>
+                      <div
+                        class="flex items-center justify-between w-full pt-1"
+                      >
+                        <p
+                          class="text-base font-black leading-none text-gray-800 dark:text-white"
+                        >
+                          CD card holder
+                        </p>
+                        <select
+                          name=""
+                          id=""
+                          class="py-2 px-1 border border-gray-200 mr-6 focus:outline-none dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
+                        >
+                          <option value="">01</option>
+                          <option value="">02</option>
+                          <option value="">03</option>
+                        </select>
+                      </div>
+                      <p
+                        class="text-xs leading-3 text-gray-600 dark:text-white pt-2"
+                      >
+                        Height: 10 inches
+                      </p>
+                      <p
+                        class="text-xs leading-3 text-gray-600 dark:text-white py-4"
+                      >
+                        Color: Black
+                      </p>
+                      <p
+                        class="w-96 text-xs leading-3 text-gray-600 dark:text-white"
+                      >
+                        Composition: 100% claf leather
+                      </p>
+                      <div class="flex items-center justify-between pt-5">
+                        <div class="flex items-center">
+                          <p
+                            class="text-xs leading-3 underline text-gray-800 dark:text-white cursor-pointer"
+                          >
+                            Add to favorites
+                          </p>
+                          <p
+                            class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer"
+                          >
+                            Remove
+                          </p>
+                        </div>
+                        <p
+                          class="text-base font-black leading-none text-gray-800 dark:text-white"
+                        >
+                          $5,000
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="lg:w-96 md:w-8/12 w-full bg-gray-100 dark:bg-gray-900 h-full"
+                >
+                  <div
+                    class="flex flex-col lg:h-screen h-auto lg:px-8 md:px-7 px-4 lg:py-20 md:py-10 py-6 justify-between overflow-y-auto"
+                  >
+                    <div>
+                      <p
+                        class="lg:text-4xl text-3xl font-black leading-9 text-gray-800 dark:text-white"
+                      >
+                        Summary
+                      </p>
+                      <div class="flex items-center justify-between pt-16">
+                        <p
+                          class="text-base leading-none text-gray-800 dark:text-white"
+                        >
+                          Subtotal
+                        </p>
+                        <p
+                          class="text-base leading-none text-gray-800 dark:text-white"
+                        >
+                          $10,000
+                        </p>
+                      </div>
+                      <div class="flex items-center justify-between pt-5">
+                        <p
+                          class="text-base leading-none text-gray-800 dark:text-white"
+                        >
+                          Shipping
+                        </p>
+                        <p
+                          class="text-base leading-none text-gray-800 dark:text-white"
+                        >
+                          $30
+                        </p>
+                      </div>
+                      <div class="flex items-center justify-between pt-5">
+                        <p
+                          class="text-base leading-none text-gray-800 dark:text-white"
+                        >
+                          Tax
+                        </p>
+                        <p
+                          class="text-base leading-none text-gray-800 dark:text-white"
+                        >
+                          $35
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      <div
+                        class="flex items-center pb-6 justify-between lg:pt-5 pt-20"
+                      >
+                        <p
+                          class="text-2xl leading-normal text-gray-800 dark:text-white"
+                        >
+                          Total
+                        </p>
+                        <p
+                          class="text-2xl font-bold leading-normal text-right text-gray-800 dark:text-white"
+                        >
+                          $10,065
+                        </p>
+                      </div>
+                      <button
+                        class="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white dark:hover:bg-gray-700"
+                      >
+                        Checkout
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="grid grid-cols-2 bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+            >
+              <button
+                type="button"
+                class="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+              >
+                Register
+              </button>
+              <p
+                class="inline-flex justify-start px-4 py-2 text-base font-medium text-gray-500"
+              >
+                Don't have an account yet?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
